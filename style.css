@@ -1,0 +1,82 @@
+:root {
+    --bg-overlay: rgba(255, 255, 255, 0.65); /* Branco translúcido */
+    --card-blur: 10px;
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
+    --btn-bg: #0984e3;
+}
+
+.modo-escuro {
+    --bg-overlay: rgba(0, 0, 0, 0.75); /* Preto translúcido */
+    --text-primary: #dfe6e9;
+    --text-secondary: #b2bec3;
+    --btn-bg: #d63031;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /* Imagem de fundo real de tecnologia/código */
+    background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartao {
+    /* MÁGICA DO VIDRO AQUI: */
+    background-color: var(--bg-overlay);
+    backdrop-filter: blur(var(--card-blur)); /* Desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(var(--card-blur)); /* Suporte para Safari */
+    
+    width: 350px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    text-align: center;
+    transition: background-color 0.4s ease;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid rgba(255,255,255,0.5);
+    object-fit: cover; /* Garante que a imagem não estique */
+}
+
+h1 { color: var(--text-primary); margin-bottom: 0.5rem; }
+p { color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem; }
+
+/* Organizando os botões lado a lado */
+.botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.botao, .botao-secundario {
+    text-decoration: none; /* Remove sublinhado do link */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.botao {
+    background-color: var(--btn-bg);
+    color: white;
+}
+
+.botao-secundario {
+    background-color: transparent;
+    border: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.botao:hover, .botao-secundario:hover { transform: translateY(-3px); opacity: 0.9; }

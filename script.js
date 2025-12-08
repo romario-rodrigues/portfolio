@@ -51,5 +51,23 @@ botaoTema.addEventListener('click', () => {
     }
 });
 
+// --- ANIMAÇÃO DE SCROLL (SCROLL REVEAL) ---
+
+// 1. Configuração do "Vigia"
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+        // Se o elemento entrou na tela
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add('visivel'); // Adiciona a classe que faz aparecer
+        } else {
+            // Opcional: Remove a classe se sair da tela (para animar de novo ao subir)
+            // entrada.target.classList.remove('visivel'); 
+        }
+    });
+});
+
+// 2. Mandar o vigia observar todos os cartões de projeto
+const projetos = document.querySelectorAll('.card-projeto');
+projetos.forEach((projeto) => observador.observe(projeto));
 // Chama a função ao iniciar o script
 carregarDados();

@@ -199,3 +199,27 @@ p {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
+/* Modifique a classe existente .card-projeto para começar invisível */
+.card-projeto {
+    /* ... mantenha suas configurações de cor, borda, etc ... */
+    
+    /* Adicione estas linhas para a animação: */
+    opacity: 0;
+    transform: translateY(50px); /* Começa 50px para baixo */
+    transition: all 0.6s ease-out; /* A mágica da suavidade */
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+/* Crie esta nova classe */
+.card-projeto.visivel {
+    opacity: 1;
+    transform: translateY(0); /* Volta para o lugar original */
+}
+
+/* Dica Pro: Atraso escalonado (um aparece depois do outro) */
+.card-projeto:nth-child(1) { transition-delay: 0.1s; }
+.card-projeto:nth-child(2) { transition-delay: 0.3s; }
+.card-projeto:nth-child(3) { transition-delay: 0.5s; }

@@ -1,42 +1,69 @@
+/* --- VARIÁVEIS E CORES (TEMA CLARO/ESCURO) --- */
 :root {
-    --bg-overlay: rgba(255, 255, 255, 0.65); /* Branco translúcido */
+    /* Modo Claro (Padrão) */
+    --bg-overlay: rgba(255, 255, 255, 0.65); /* Branco vidro */
     --card-blur: 10px;
     --text-primary: #2d3436;
     --text-secondary: #636e72;
-    --btn-bg: #0984e3;
+    --btn-bg: #0984e3; /* Azul */
+    --border-color: rgba(255, 255, 255, 0.3);
 }
 
 .modo-escuro {
-    --bg-overlay: rgba(0, 0, 0, 0.75); /* Preto translúcido */
+    /* Modo Escuro */
+    --bg-overlay: rgba(0, 0, 0, 0.75); /* Preto vidro */
     --text-primary: #dfe6e9;
     --text-secondary: #b2bec3;
-    --btn-bg: #d63031;
+    --btn-bg: #d63031; /* Vermelho */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- RESET E ESTRUTURA BÁSICA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    /* Imagem de fundo real de tecnologia/código */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Imagem de fundo de tecnologia */
     background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
+    
+    /* Permite rolagem se o conteúdo for grande */
+    min-height: 100vh;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente se couber na tela */
+    padding: 2rem 1rem; /* Espaçamento para não grudar nas bordas no celular */
 }
 
+/* --- CONTAINER PRINCIPAL (AGRUPA PERFIL E PROJETOS) --- */
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* --- CARTÃO DE PERFIL --- */
 .cartao {
-    /* MÁGICA DO VIDRO AQUI: */
     background-color: var(--bg-overlay);
-    backdrop-filter: blur(var(--card-blur)); /* Desfoca o que está atrás */
-    -webkit-backdrop-filter: blur(var(--card-blur)); /* Suporte para Safari */
+    backdrop-filter: blur(var(--card-blur)); /* Efeito de Vidro */
+    -webkit-backdrop-filter: blur(var(--card-blur));
     
-    width: 350px;
+    width: 100%;
+    max-width: 350px; /* Limita a largura do perfil */
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+    border: 1px solid var(--border-color);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     text-align: center;
-    transition: background-color 0.4s ease;
 }
 
 .foto-perfil {
@@ -45,38 +72,130 @@ body {
     border-radius: 50%;
     margin-bottom: 1rem;
     border: 3px solid rgba(255,255,255,0.5);
-    object-fit: cover; /* Garante que a imagem não estique */
+    object-fit: cover;
 }
 
-h1 { color: var(--text-primary); margin-bottom: 0.5rem; }
-p { color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem; }
+h1 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
 
-/* Organizando os botões lado a lado */
+p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- BOTÕES (CORRIGIDO) --- */
 .botoes {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
+/* Estilos compartilhados para garantir tamanhos iguais */
 .botao, .botao-secundario {
-    text-decoration: none; /* Remove sublinhado do link */
-    padding: 10px 20px;
+    text-decoration: none;
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
     border: none;
     transition: transform 0.2s, opacity 0.2s;
+    display: inline-flex; /* Garante alinhamento perfeito */
+    align-items: center;
+    justify-content: center;
 }
 
+/* Botão Principal (Cheio) */
 .botao {
     background-color: var(--btn-bg);
     color: white;
 }
 
+/* Botão Secundário (Borda) */
 .botao-secundario {
     background-color: transparent;
-    border: 2px solid var(--text-secondary);
+    border: 2px solid var(--text-primary); /* Borda segue a cor do texto */
     color: var(--text-primary);
 }
 
-.botao:hover, .botao-secundario:hover { transform: translateY(-3px); opacity: 0.9; }
+/* Efeito Hover */
+.botao:hover, .botao-secundario:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* --- GRADE DE PROJETOS --- */
+.grade-projetos {
+    display: grid;
+    /* Cria colunas automaticamente (Responsivo) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card-projeto {
+    background-color: var(--bg-overlay);
+    backdrop-filter: blur(var(--card-blur));
+    -webkit-backdrop-filter: blur(var(--card-blur));
+    
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, background-color 0.3s;
+    cursor: pointer;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.85); /* Clareia ao passar o mouse */
+}
+
+/* Hover específico do modo escuro */
+.modo-escuro .card-projeto:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.icone-projeto {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card-projeto h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card-projeto p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* --- TAGS (TECH STACK) --- */
+.techs {
+    margin-top: auto; /* Empurra para o rodapé do card */
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.techs span {
+    font-size: 0.75rem;
+    background-color: var(--btn-bg); /* Usa a cor do tema */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}

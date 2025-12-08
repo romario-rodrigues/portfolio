@@ -8,20 +8,49 @@
     <link rel="icon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
 </head>
 <body>
-
-    <div class="cartao">
-        <img id="avatar" src="https://i.gifer.com/ZKZg.gif" alt="Foto de Perfil" class="foto-perfil">
+    <main class="container-principal">
         
-        <h1 id="nome">Buscando dados...</h1>
-        <p id="bio">Aguardando conexão com a API...</p>
-        
-        <div class="botoes">
-            <a id="link-perfil" href="#" target="_blank" class="botao">Ver GitHub</a>
-            
-            <button id="botao-tema" class="botao-secundario">Alternar Tema</button>
+        <div class="cartao">
+            <img id="avatar" src="https://i.gifer.com/ZKZg.gif" alt="Foto de Perfil" class="foto-perfil">
+            <h1 id="nome">Carregando...</h1>
+            <p id="bio">Buscando dados...</p>
+            <div class="botoes">
+                <a id="link-perfil" href="#" target="_blank" class="botao">GitHub</a>
+                <button id="botao-tema" class="botao-secundario">Tema</button>
+            </div>
         </div>
-    </div>
 
+        <div class="grade-projetos">
+            
+            <div class="card-projeto">
+                <div class="icone-projeto">🤖</div>
+                <h3>Bot de Ofertas</h3>
+                <p>Automação em Python que monitora e envia promoções para canais do Telegram usando a API oficial.</p>
+                <div class="techs">
+                    <span>Python</span><span>Requests</span>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="icone-projeto">📂</div>
+                <h3>Course Downloader</h3>
+                <p>Script utilizando a biblioteca Telethon para baixar e organizar materiais de estudo automaticamente.</p>
+                <div class="techs">
+                    <span>Python</span><span>Telethon</span>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="icone-projeto">⚡</div>
+                <h3>Remote Shutdown</h3>
+                <p>Shell Script para administração remota e desligamento em massa de máquinas Windows via Linux.</p>
+                <div class="techs">
+                    <span>Bash</span><span>Linux</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

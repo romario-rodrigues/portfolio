@@ -380,3 +380,25 @@ p {
 h1, h2, h3, p, span, a {
     transition: color 0.5s ease 0.2s; /* Textos esperam um pouquinho para mudar de cor */
 }
+
+/* --- ÍCONE DE CAFÉ (RODAPÉ) --- */
+.cafe {
+    display: inline-block; /* Permite animar */
+    cursor: help; /* Muda o cursor para uma interrogação/ajuda */
+    font-size: 1.2rem;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+/* Quando passa o mouse, o café "vibra" de energia */
+.cafe:hover {
+    animation: tremedeira 0.5s infinite;
+}
+
+@keyframes tremedeira {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}

@@ -223,3 +223,74 @@ p {
 .card-projeto:nth-child(1) { transition-delay: 0.1s; }
 .card-projeto:nth-child(2) { transition-delay: 0.3s; }
 .card-projeto:nth-child(3) { transition-delay: 0.5s; }
+
+/* --- SEÇÃO DE HABILIDADES --- */
+.container-habilidades {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container-habilidades h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.grid-habilidades {
+    display: flex;
+    flex-wrap: wrap; /* Quebra linha se não couber */
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.skill-box {
+    background-color: var(--bg-overlay);
+    backdrop-filter: blur(var(--card-blur));
+    -webkit-backdrop-filter: blur(var(--card-blur));
+    border: 1px solid var(--border-color);
+    
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+    
+    /* A Mágica da Animação */
+    animation: flutuar 3s ease-in-out infinite;
+    /* Usamos a variável --i (definida no HTML) para cada um começar em tempo diferente */
+    animation-delay: calc(var(--i) * 0.2s);
+    
+    transition: background-color 0.3s;
+}
+
+.skill-box:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Efeito ao passar o mouse */
+    border-color: var(--btn-bg); /* Borda da cor do tema */
+}
+
+.skill-box .icone {
+    font-size: 2rem;
+}
+
+.skill-box span {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- KEYFRAMES (ANIMAÇÃO) --- */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px); /* Sobe 10px */
+    }
+    100% {
+        transform: translateY(0px); /* Desce */
+    }
+}

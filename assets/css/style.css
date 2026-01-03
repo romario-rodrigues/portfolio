@@ -352,3 +352,31 @@ p {
     font-size: 0.8rem;
     opacity: 0.8;
 }
+
+/* --- EFEITO CASCATA NA TROCA DE TEMA (ORDENADO) --- */
+
+/* 1. O Cartão de Perfil muda primeiro (0.1s de atraso) */
+.cartao {
+    /* Sintaxe: propriedade | duração | curva | ATRASO */
+    transition: transform 0.3s, background-color 0.5s ease 0.1s, border-color 0.5s ease 0.1s;
+}
+
+/* 2. As Habilidades mudam depois (0.2s de atraso) */
+.skill-box {
+    transition: transform 0.3s, background-color 0.5s ease 0.2s, border-color 0.5s ease 0.2s;
+}
+
+/* 3. Os Projetos mudam depois das habilidades (0.3s de atraso) */
+.card-projeto {
+    transition: transform 0.3s, opacity 0.6s, background-color 0.5s ease 0.3s, border-color 0.5s ease 0.3s;
+}
+
+/* 4. O Rodapé é o último a mudar (0.4s de atraso) */
+.rodape {
+    transition: background-color 0.5s ease 0.4s, color 0.5s ease 0.4s, border-color 0.5s ease 0.4s;
+}
+
+/* DICA PRO: Atrasar os textos para um efeito ainda mais suave */
+h1, h2, h3, p, span, a {
+    transition: color 0.5s ease 0.2s; /* Textos esperam um pouquinho para mudar de cor */
+}

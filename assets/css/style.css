@@ -312,40 +312,43 @@ p {
     font-size: 0.9rem;
 }
 
+/* --- REDES SOCIAIS (ÍCONES) --- */
 .redes-sociais {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin: 1rem 0;
+    gap: 2rem; /* Mais espaço entre os ícones */
+    margin: 1.5rem 0;
 }
 
 .redes-sociais a {
     text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 600;
-    transition: color 0.3s, transform 0.3s;
-    position: relative;
+    color: var(--text-primary); /* Cor padrão do tema */
+    font-size: 1.8rem; /* Tamanho do ícone */
+    transition: transform 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
-/* Efeito legal: linha que aparece embaixo ao passar o mouse */
-.redes-sociais a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--btn-bg); /* Cor do tema (azul ou vermelho) */
-    transition: width 0.3s;
-}
-
+/* Efeito de "Pulo" ao passar o mouse */
 .redes-sociais a:hover {
-    color: var(--btn-bg);
-    transform: translateY(-2px);
+    transform: translateY(-5px) scale(1.1); /* Sobe e aumenta um pouquinho */
 }
 
-.redes-sociais a:hover::after {
-    width: 100%; /* A linha cresce */
+/* Cores específicas de cada marca ao passar o mouse */
+.redes-sociais a:hover .fa-linkedin {
+    color: #0077b5; /* Azul LinkedIn */
+}
+
+.redes-sociais a:hover .fa-envelope {
+    color: #ea4335; /* Vermelho Gmail */
+}
+
+.redes-sociais a:hover .fa-whatsapp {
+    color: #25d366; /* Verde Zap */
+}
+
+.redes-sociais a:hover .fa-github {
+    color: #6e5494; /* Roxo GitHub (ou use var(--text-primary) no dark mode) */
 }
 
 .feito-com {
@@ -401,4 +404,32 @@ h1, h2, h3, p, span, a {
     50% { transform: rotate(0deg); }
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
+}
+
+/* --- AVISO FLUTUANTE (TOAST) --- */
+#toast-aviso {
+    visibility: hidden; /* Começa invisível */
+    min-width: 250px;
+    background-color: var(--text-primary); /* Usa a cor do texto (contraste) */
+    color: var(--bg-overlay); /* Usa a cor do fundo para o texto */
+    text-align: center;
+    border-radius: 50px; /* Borda bem redonda */
+    padding: 16px;
+    position: fixed; /* Fixo na tela, não importa o scroll */
+    z-index: 1000; /* Fica acima de tudo */
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%); /* Centraliza perfeitamente */
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+/* Classe que o JS vai adicionar para mostrar o aviso */
+#toast-aviso.mostrar {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Sobe um pouquinho ao aparecer */
 }

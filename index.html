@@ -1,140 +1,406 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Romário Rodrigues — Desenvolvedor Python, Linux e Automação.">
+    <meta name="theme-color" content="#6366f1">
+    <title>Romário Rodrigues — Desenvolvedor & Automação</title>
+    <link rel="canonical" href="https://romariorodrigues.dev">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://fav.farm/☕">
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z5GRNRPJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-F5Z5GRNRPJ');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Dinâmico</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="https://fav.farm/☕">
 </head>
 <body>
-    <main class="container-principal">
-        
-        <div class="cartao">
-            <img id="avatar" src="https://i.gifer.com/ZKZg.gif" alt="Foto de Perfil" class="foto-perfil">
-            <h1 id="nome">Carregando...</h1>
-            <p id="bio">Buscando dados...</p>
-            <div class="botoes">
-                <a id="link-perfil" href="#" target="_blank" class="botao">GitHub</a>
-                <button id="botao-tema" class="botao-secundario">Tema</button>
+    <!-- NAV -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="#inicio" class="nav-logo">R<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button id="botao-tema" aria-label="Alternar tema" title="Alternar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="nav-toggle" aria-label="Menu" title="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-avatar-ring">
+                <img id="avatar" src="https://i.gifer.com/ZKZg.gif" alt="Foto de Romário Rodrigues" class="foto-perfil">
+                <span class="status-dot"></span>
+            </div>
+            <p class="hero-greeting">Olá, eu sou</p>
+            <h1 class="hero-name" id="nome">Carregando...</h1>
+            <p class="hero-tagline" id="bio">Buscando dados...</p>
+            <div class="hero-actions">
+                <a href="#projetos" class="btn btn-primary">
+                    <i class="fa-solid fa-rocket"></i> Ver Projetos
+                </a>
+                <a id="link-perfil" href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-repos">—</span>
+                    <span class="stat-label">Repositórios</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-followers">—</span>
+                    <span class="stat-label">Seguidores</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="star-total">—</span>
+                    <span class="stat-label">Stars</span>
+                </div>
             </div>
         </div>
+        <a href="#projetos" class="scroll-indicator" aria-label="Rolar para baixo">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
 
-    
-
+    <!-- PROJECTS SECTION -->
+    <section id="projetos" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Projetos</span>
+                <h2 class="section-title">Meus Trabalhos</h2>
+                <p class="section-subtitle">Confira os projetos que desenvolvi para estudar e resolver problemas reais.</p>
+            </div>
             <div class="grade-projetos">
-            
-            <a href="https://github.com/romario-rodrigues/telegram_script" target="_blank" class="card-projeto">
-                <div class="icone-projeto">🤖</div>
-                <h3>Bot Downloader</h3>
-                <p>Script de automação para baixar e organizar arquivos de canais restritos do Telegram.</p>
-                <div class="techs">
-                    <span>Python</span><span>Telethon</span><span>Automação</span>
-                </div>
-            </a>
 
-            <a href="https://github.com/romario-rodrigues/projeto-musicdote" target="_blank" class="card-projeto">
-                <div class="icone-projeto">🎵</div>
-                <h3>MusicDot Clone</h3>
-                <p>Interface front-end responsiva recriando a landing page de um serviço de música digital.</p>
-                <div class="techs">
-                    <span>HTML5</span><span>CSS3</span><span>Front-end</span>
+                <!-- telegram_script -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Bot Downloader</h3>
+                            <a href="https://github.com/romario-rodrigues/telegram_script" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Script em Python para baixar e organizar arquivos de canais restritos no Telegram.</p>
+                        <div class="projeto-techs">
+                            <span>Python</span><span>Telethon</span><span>Automação</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/telegram_script" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
-            </a>
 
-            <a href="https://github.com/romario-rodrigues/sitecardapio-hamburgueria" target="_blank" class="card-projeto">
-                <div class="icone-projeto">🍔</div>
-                <h3>Cardápio Digital</h3>
-                <p>Aplicação web interativa para pedidos de hamburgueria com carrinho de compras.</p>
-                <div class="techs">
-                    <span>JavaScript</span><span>Web</span><span>UI/UX</span>
+                <!-- sitecardapio-hamburgueria -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Cardápio Digital</h3>
+                            <a href="https://github.com/romario-rodrigues/sitecardapio-hamburgueria" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Aplicação web interativa para pedidos de hamburgueria com carrinho de compras dinâmico.</p>
+                        <div class="projeto-techs">
+                            <span>Python</span><span>HTML</span><span>CSS</span><span>Web</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/sitecardapio-hamburgueria" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
-            </a>
 
+                <!-- projeto-musicdote -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>MusicDot Clone</h3>
+                            <a href="https://github.com/romario-rodrigues/projeto-musicdote" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Landing page responsiva de serviço de música digital, com HTML, CSS e JavaScript.</p>
+                        <div class="projeto-techs">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/projeto-musicdote" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- sistema_de_cadastro -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-table-list"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Sistema de Cadastro</h3>
+                            <a href="https://github.com/romario-rodrigues/sistema_de_cadastro" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Sistema para cadastro e gerenciamento de dados utilizando Python.</p>
+                        <div class="projeto-techs">
+                            <span>Python</span><span>Database</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/sistema_de_cadastro" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- caixasupermercado -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Caixa Supermercado</h3>
+                            <a href="https://github.com/romario-rodrigues/caixasupermercado" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Simulador de caixa de supermercado desenvolvido em Python.</p>
+                        <div class="projeto-techs">
+                            <span>Python</span><span>CLI</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/caixasupermercado" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- telaDeLogin -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Tela de Login</h3>
+                            <a href="https://github.com/romario-rodrigues/telaDeLogin" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Interface de login moderna e responsiva com HTML e CSS.</p>
+                        <div class="projeto-techs">
+                            <span>HTML</span><span>CSS</span><span>UI</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/telaDeLogin" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recriandolayoutchat -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Layout de Chat</h3>
+                            <a href="https://github.com/romario-rodrigues/recriandolayoutchat" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Recriação de um layout de chat utilizando HTML e CSS puro.</p>
+                        <div class="projeto-techs">
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/recriandolayoutchat" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recreating_spotify -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-brands fa-spotify"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>Spotify Clone</h3>
+                            <a href="https://github.com/romario-rodrigues/recreating_spotify" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Clone da interface do Spotify com HTML e CSS responsivo.</p>
+                        <div class="projeto-techs">
+                            <span>HTML</span><span>CSS</span><span>Front-end</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/recreating_spotify" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tecblog -->
+                <div class="projeto-card reveal">
+                    <div class="projeto-preview">
+                        <div class="projeto-thumb">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                    </div>
+                    <div class="projeto-info">
+                        <div class="projeto-info-top">
+                            <h3>TecBlog</h3>
+                            <a href="https://github.com/romario-rodrigues/tecblog" target="_blank" rel="noopener" class="projeto-stars"><i class="fa-regular fa-star"></i> 0</a>
+                        </div>
+                        <p>Modelo de blog de notícias e tecnologia com HTML e CSS.</p>
+                        <div class="projeto-techs">
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://github.com/romario-rodrigues/tecblog" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        </div>
-
-        <div class="container-habilidades">
-            <h2>Habilidades & Tecnologias</h2>
-            
+    <!-- SKILLS SECTION -->
+    <section id="habilidades" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Stack</span>
+                <h2 class="section-title">Habilidades & Tecnologias</h2>
+                <p class="section-subtitle">Ferramentas que utilizo para transformar ideias em soluções.</p>
+            </div>
             <div class="grid-habilidades">
-                <div class="skill-box" style="--i:1">
-                    <span class="icone">🐍</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
                     <span>Python</span>
                 </div>
-
-                <div class="skill-box" style="--i:2">
-                    <span class="icone">🐧</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-linux"></i>
+                    </div>
                     <span>Linux</span>
                 </div>
-
-                <div class="skill-box" style="--i:3">
-                    <span class="icone">🐚</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
                     <span>Bash/Shell</span>
                 </div>
-
-                <div class="skill-box" style="--i:4">
-                    <span class="icone">🐱</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
                     <span>Git & GitHub</span>
                 </div>
-
-                <div class="skill-box" style="--i:5">
-                    <span class="icone">🌐</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
                     <span>HTML & CSS</span>
                 </div>
-
-                <div class="skill-box" style="--i:6">
-                    <span class="icone">🤖</span>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
                     <span>Automação</span>
+                </div>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-box reveal">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <span>APIs & Data</span>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    </main>
-
-    <footer class="rodape">
-        <p>&copy; 2026 Romário Rodrigues. Todos os direitos reservados.</p>
-        
-        <div class="redes-sociais">
-            <a href="https://www.linkedin.com/in/romário-rodrigues-5a9701125/" target="_blank" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            
-           <a href="#" class="botao-copiar" data-email="romariobdc2011@gmail.com" aria-label="Copiar Email">
-            <i class="fa-solid fa-envelope"></i>
-           </a>
-            
-            <a href="https://wa.me/5566992275522" target="_blank" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            
-            <a href="https://github.com/romario-rodrigues" target="_blank" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
+    <!-- CONTACT SECTION -->
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Contato</span>
+                <h2 class="section-title">Vamos Conversar?</h2>
+                <p class="section-subtitle">Estou sempre aberto a novos projetos e oportunidades.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://www.linkedin.com/in/romário-rodrigues-5a9701125/" target="_blank" rel="noopener" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>Conecte-se comigo</p>
+                    <span class="contact-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="https://wa.me/5566992275522" target="_blank" rel="noopener" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p>(66) 99227-5522</p>
+                    <span class="contact-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <button class="contact-card botao-copiar reveal" data-email="romariobdc2011@gmail.com">
+                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h3>E-mail</h3>
+                    <p>Clique para copiar</p>
+                    <span class="contact-arrow"><i class="fa-solid fa-copy"></i></span>
+                </button>
+            </div>
         </div>
-        
-        <p class="feito-com">
-           <p class="feito-com">
-    Feito com 💙 e muita cafeína <span class="cafe" title="Aceito um cafézinho!">☕</span>
-    </p>
-        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="rodape">
+        <p class="feito-com">Feito com <span class="text-gradient">HTML, CSS & JavaScript</span> e muita cafeína ☕</p>
+        <p>&copy; <span id="ano-footer"></span> Romário Rodrigues. Todos os direitos reservados.</p>
     </footer>
 
-    <div id="toast-aviso">Email copiado para a área de transferência! 📋</div>
+    <div id="toast-aviso">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Email copiado para a área de transferência!</span>
+    </div>
 
-    <script src="assets/js/script.js"></script>
-</body>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
